@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Select Tip Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Tipsy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SelectTipController" customModule="Tipsy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -64,7 +64,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="lgn-Ou-Xrp" userLabel="SVPercentages">
                                                 <rect key="frame" x="0.0" y="56" width="390" height="54"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmY-8P-9RT">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmY-8P-9RT" userLabel="ZeroButton">
                                                         <rect key="frame" x="0.0" y="0.0" width="105.33333333333333" height="54"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="FeZ-Kj-3C7"/>
@@ -76,8 +76,11 @@
                                                         <state key="normal" title="0%">
                                                             <color key="titleColor" systemColor="systemGreenColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="tipChanged:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fwd-xL-l83"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RW3-dV-kg5">
+                                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RW3-dV-kg5" userLabel="TenButton">
                                                         <rect key="frame" x="105.33333333333331" y="0.0" width="138" height="54"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="54" id="kgm-NJ-rTg"/>
@@ -88,8 +91,11 @@
                                                         <state key="normal" title="10%">
                                                             <color key="titleColor" systemColor="systemGreenColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="tipChanged:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EFa-lj-uWZ"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Jj-DB-7mX">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Jj-DB-7mX" userLabel="TwentyButton">
                                                         <rect key="frame" x="243.33333333333331" y="0.0" width="146.66666666666669" height="54"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="54" id="E2Y-2d-nDf"/>
@@ -100,6 +106,9 @@
                                                         <state key="normal" title="20%">
                                                             <color key="titleColor" systemColor="systemGreenColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="tipChanged:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QJ0-n4-7LX"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -181,6 +190,13 @@
                             <constraint firstItem="BdR-zd-bbZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sjs-6b-yOh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="billTextField" destination="uKg-LB-0T4" id="Ddy-pI-u6R"/>
+                        <outlet property="splitNumberLabel" destination="zoT-yx-wDe" id="zzg-fa-mNM"/>
+                        <outlet property="tenButton" destination="RW3-dV-kg5" id="07W-FZ-kCB"/>
+                        <outlet property="twentyButton" destination="4Jj-DB-7mX" id="OYk-5X-OO8"/>
+                        <outlet property="zeroButton" destination="bmY-8P-9RT" id="Ngx-1b-PB0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

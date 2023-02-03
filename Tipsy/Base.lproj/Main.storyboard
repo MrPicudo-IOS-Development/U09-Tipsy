@@ -29,14 +29,14 @@
                                         <color key="textColor" systemColor="systemGrayColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="e.g. 123.56" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uKg-LB-0T4">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. 123.56" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uKg-LB-0T4">
                                         <rect key="frame" x="0.0" y="56" width="430" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Fwr-ds-txg"/>
                                         </constraints>
                                         <color key="textColor" systemColor="systemGrayColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -71,7 +71,7 @@
                                                             <constraint firstAttribute="height" constant="54" id="MvS-0h-PLc"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                                        <color key="tintColor" systemColor="systemOrangeColor"/>
+                                                        <color key="tintColor" systemColor="systemGreenColor"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="0%">
                                                             <color key="titleColor" systemColor="systemGreenColor"/>
@@ -101,7 +101,7 @@
                                                             <constraint firstAttribute="height" constant="54" id="E2Y-2d-nDf"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                                        <color key="tintColor" systemColor="systemOrangeColor"/>
+                                                        <color key="tintColor" systemColor="systemGreenColor"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="20%">
                                                             <color key="titleColor" systemColor="systemGreenColor"/>
@@ -124,7 +124,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="8ij-kA-5W5">
                                                 <rect key="frame" x="82" y="192" width="226" height="29"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zoT-yx-wDe">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zoT-yx-wDe">
                                                         <rect key="frame" x="0.0" y="0.0" width="93" height="29"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="29" id="nB0-6F-D3I"/>
@@ -134,13 +134,16 @@
                                                         <color key="textColor" systemColor="systemGreenColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="7Jh-EC-QaC">
+                                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="7Jh-EC-QaC">
                                                         <rect key="frame" x="133" y="0.0" width="93" height="29"/>
                                                         <color key="backgroundColor" red="0.70966267053552423" green="1" blue="0.82024971976318817" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="29" id="6JN-eO-Xz7"/>
                                                             <constraint firstAttribute="width" constant="93" id="w4O-zb-tK6"/>
                                                         </constraints>
+                                                        <connections>
+                                                            <action selector="stepperValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="n58-d2-pEa"/>
+                                                        </connections>
                                                     </stepper>
                                                 </subviews>
                                             </stackView>
@@ -174,6 +177,9 @@
                                 <state key="normal" title="Calculate">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="calculatePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PZd-Dm-BwF"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -196,18 +202,19 @@
                         <outlet property="tenButton" destination="RW3-dV-kg5" id="07W-FZ-kCB"/>
                         <outlet property="twentyButton" destination="4Jj-DB-7mX" id="OYk-5X-OO8"/>
                         <outlet property="zeroButton" destination="bmY-8P-9RT" id="Ngx-1b-PB0"/>
+                        <segue destination="WcN-Or-0ko" kind="presentation" identifier="goToResults" id="edN-xc-9K1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="46.564885496183201" y="-2.1126760563380285"/>
         </scene>
-        <!--View Controller-->
+        <!--Results View Controller-->
         <scene sceneID="mGK-28-0wu">
             <objects>
-                <viewController id="WcN-Or-0ko" sceneMemberID="viewController">
+                <viewController id="WcN-Or-0ko" customClass="ResultsViewController" customModule="Tipsy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tDS-ic-AnH">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="863"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mNf-Px-OSa" userLabel="GreenView">
@@ -253,7 +260,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kzj-mr-44O">
-                                <rect key="frame" x="115" y="844" width="200" height="54"/>
+                                <rect key="frame" x="115" y="809" width="200" height="54"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="0ug-2b-peV"/>
@@ -264,6 +271,9 @@
                                 <state key="normal" title="Recalculate">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="recalculatePressed:" destination="WcN-Or-0ko" eventType="touchUpInside" id="zy7-PT-YEs"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sBC-vP-bt8"/>
@@ -279,6 +289,10 @@
                             <constraint firstItem="Kzj-mr-44O" firstAttribute="bottom" secondItem="sBC-vP-bt8" secondAttribute="bottom" id="vWe-xE-eei"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="settingsLabel" destination="fXF-0A-xIH" id="b7y-zc-zh5"/>
+                        <outlet property="totalLabel" destination="4RI-A3-4Ov" id="lWT-Z7-kT8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PhC-l8-2Bg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -294,9 +308,6 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

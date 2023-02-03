@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		430F4FC7298D538000EFD588 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430F4FC6298D538000EFD588 /* ResultsViewController.swift */; };
 		435BB9742981EF780018B0CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435BB9732981EF780018B0CD /* AppDelegate.swift */; };
 		435BB9762981EF780018B0CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435BB9752981EF780018B0CD /* SceneDelegate.swift */; };
 		435BB9782981EF780018B0CD /* SelectTipController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435BB9772981EF780018B0CD /* SelectTipController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		430F4FC6298D538000EFD588 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		435BB9702981EF780018B0CD /* Tipsy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tipsy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		435BB9732981EF780018B0CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		435BB9752981EF780018B0CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +39,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		430F4FC8298D53D200EFD588 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				435BB9772981EF780018B0CD /* SelectTipController.swift */,
+				430F4FC6298D538000EFD588 /* ResultsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		435BB9672981EF780018B0CD = {
 			isa = PBXGroup;
 			children = (
@@ -58,7 +69,7 @@
 			children = (
 				435BB9732981EF780018B0CD /* AppDelegate.swift */,
 				435BB9752981EF780018B0CD /* SceneDelegate.swift */,
-				435BB9772981EF780018B0CD /* SelectTipController.swift */,
+				430F4FC8298D53D200EFD588 /* Controllers */,
 				435BB9792981EF780018B0CD /* Main.storyboard */,
 				435BB97C2981EF790018B0CD /* Assets.xcassets */,
 				435BB97E2981EF790018B0CD /* LaunchScreen.storyboard */,
@@ -141,6 +152,7 @@
 				435BB9782981EF780018B0CD /* SelectTipController.swift in Sources */,
 				435BB9742981EF780018B0CD /* AppDelegate.swift in Sources */,
 				435BB9762981EF780018B0CD /* SceneDelegate.swift in Sources */,
+				430F4FC7298D538000EFD588 /* ResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
